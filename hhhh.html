@@ -1,0 +1,54 @@
+
+<?php
+#use PHPMailer\PHPMailer\PHPMailer;
+#require '../vendor/autoload.php';
+#$mail = new PHPMailer;
+#$mail->isSMTP();
+#$mail->SMTPDebug = 0;
+#$mail->Host = 'smtp.hostinger.com';
+#$mail->Port = 587;
+#$mail->SMTPAuth = true;
+#$mail->Username = 'inclusionstop@inclusionstop.com';
+#$mail->Password = 'inclusion123';
+#$mail->setFrom('inclusionstop@inclusionstop.com', 'Inclusion Stop');
+#$mail->addReplyTo('reply-box@hostinger-tutorials.com', 'Your Name');
+#$mail->addAddress('inclusionstop@gmail.com', 'Receiver Name');
+#$mail->Subject = 'Mudanca de Senha - Inclusion Stop';
+#$mail->msgHTML(file_get_contents('email.php'), __DIR__);
+#$mail->AltBody = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';
+// $mail->addAttachment('test.txt');
+#if (!$mail->send()) {
+ #   echo 'Mailer Error: ' . $mail->ErrorInfo;
+#} else {
+#    echo 'Message sent!';
+#}
+$codigo = 123;
+use PHPMailer\PHPMailer\PHPMailer;
+			require '../vendor/autoload.php';
+			$mail = new PHPMailer;
+			$mail->isSMTP();
+			$mail->SMTPDebug = 0;
+			$mail->Host = 'smtp.hostinger.com';
+			$mail->Port = 587;
+			$mail->SMTPAuth = true;
+			$mail->Username = 'inclusionstop@inclusionstop.com';
+			$mail->Password = 'inclusion123';
+			$mail->setFrom('inclusionstop@inclusionstop.com', 'Inclusion Stop');
+			$mail->addReplyTo('reply-box@hostinger-tutorials.com', 'Your Name');
+			$mail->addAddress('vinniciuspierrip@gmail.com','$nome');
+			$mail->Subject = 'Esqueceu sua Senha - Inclusion Stop';
+			$mail->Body = "<div style ='width:100%;height:400px; background-color:#DDD;color:#000;font-family:monospace;'>
+			<center><a href='www.inclusionstop.com' style='text-align:center;margin-left:0px;'><img style='width:150px;style='margin-left:0px;text-align:center;' src='https://i.imgur.com/htEEiRi.png'></a>
+			<div style='font-size:45px;margin-left:auto; margin-right:auto;margin-top:50px;'>Seu código de acesso é</div>
+			<div style='font-size:30px;margin-top:50px;width:20%;background-color:#777;border-radius:5px;'>$codigo</div>
+			<div style='font-size:20px;margin-left:auto; margin-right:auto;margin-top:50px;'>Digite esse código no campo de texto</div>
+			</center></div>";
+			// $mail->msgHTML(file_get_contents('email.php'), __DIR__);
+			$mail->AltBody = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';
+			// $mail->addAttachment('test.txt');
+			if (!$mail->send()) {
+			    echo 'Mailer Error: ' . $mail->ErrorInfo;
+			} else {
+			    echo 'Message sent!';
+			}
+			?>
